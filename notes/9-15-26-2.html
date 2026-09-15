@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+
+        <style>
+            div{
+                background-color: #cccccc;
+            }
+
+            h1{
+                font-size: 100;
+            }
+/* (below): descendent selector: more specific rule */
+/* when there's a div inside an h1 */
+            div h1{ 
+                font-size: 25;
+            }
+
+        
+            #flexDiv{
+                display: flex;
+                flex-grow:]]
+                width: 100%;
+                height: 100; 
+
+
+            }
+
+            .flexDemo{
+                background-color: red;
+                height: 100%;
+                width: 10;
+                box-shadow: 0 4px 6px purple;
+            }
+
+            .flexDemo:hover{
+                background-color: green;
+            }
+            
+
+
+
+        
+        </style>
+    </head>
+
+
+    <body>
+        <h1>Ice World</h1>
+
+        <div id= "headerDiv"> 
+            <h1 id = "title">Penguins </h1>
+        </div>
+
+        <div id = "contentDiv">
+            <ul id = "penguinNames" style="display: flex">
+                <li>Mike</li>
+                <li>Lisa</li>
+                <li>Jeff</li>
+                <li>Phil</li>
+
+
+            </ul>
+        </div>
+
+        <div id = "flexDiv">
+            <div class = "flexDemo"></div>
+            <div class = "flexDemo"></div>
+
+            <div class = "flexDemo"></div>
+
+
+            
+
+
+
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>
+            9-15-26 CSS Demo
+        </title>
+        
+        <style>
+            h1{
+                color: #ff0000;
+                background-color: aqua;
+            }
+
+            #thirdH1{
+                color: #aaaaaa;
+            }
+
+            .h1Class{
+                color: #0000ff;
+            }
+
+
+/* ID has precedence over the tag */
+            #secondH1 {
+                color: #00ff00
+
+            }
+
+            
+
+        </style>
+
+    </head>
+
+    <body>
+        <h1>
+            9-15-26 Demos </h1>
+
+        <h1 id = "secondH1"> 
+            This is another H1 </h1>
+
+        <!-- 2 css rules being applied to "Third H1" -->
+         <!-- first H1 red from tag, then blue is color through class, and finally gray through id -->
+        <h1 id="thirdH1" class = "h1Class"> Third H1</h1>
+
+
+            
+    </body>
+
+<!-- competition between id selector and class selector: id - class - tag -->
+
+
+
+
+
+
+
+</html>
