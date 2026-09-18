@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>CSC 336 FALL 2026-JS Day 1</title>
+
+        <style>
+            #demoDIV{
+                background-color: rgb(18, 123, 159);
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "demoDIV">
+            Inside Div
+        </div>
+    
+
+        <script>
+            console.log("hello world!");
+            let foo = 9.4;
+            let bar = 10;
+            let sum = foo + bar
+
+            if (sum > 20){
+                console.log(sum + " is greater than 20")
+            } else {
+                console.log(sum + " is less than or equal to 20")
+            }
+
+            let i = 0;
+            while (i < 20){
+                console.log("hello");
+                i++; 
+                // i = i +1; 
+            }
+
+            for (let i = 0; i < 20; i++) {
+                console.log("hello")
+            }
+            // another syntax format, emphasizing placement of the iterator
+
+            function add3(a, b, c) {
+                let sumofParams = a + b + c 
+                return sumofParams;
+            }
+
+            console.log(add3(1,6,9)); 
+
+
+            // create an empty object
+            let obj = {};
+            obj.x = 10;
+            obj.log = function (a) {
+                console.log(a);
+            }
+
+            obj.log("hello");
+
+
+            // reference to document object
+            letdemoDIV = document.querySelector("demoDIV");
+            demoDIV.innerHTML = "Hacked!"
+
+            for (let i = 0; i < 100; i++) {
+                let randomNumber = Math.random();
+                console.log(randomNumber);
+                // make html element, html is just holding it
+                let newDiv = document.createElement("div");
+                // actually give element content
+                newDiv.innerHTML = randomNumber;
+                // actually add to html, below
+                demoDIV.append(newDiv);
+            }
+
+        </script>
+
+    </body>
+</html>
