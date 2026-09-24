@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <div id = "root"></div>
+        <script>
+            // Pokemon data
+            let allPokemon = [];
+            let pokemon = {};
+            pokemon.name = "pikachu";
+            pokemon["name"] = "pikachu";
+            pokemon.description =  "lightning";
+            pokemon.img = "https://img.pokemondb.net/sprites/black-white/normal/pikachu-f.png";
+            allPokemon.push(pokemon);
+
+            // function call, argument is the object aka dictionary, then syntax for defining object properties
+            allPokemon.push({
+                name: "smoliv",
+                description: "small",
+                img: "https://img.pokemondb.net/sprites/scarlet-violet/normal/smoliv.png"
+            }); 
+
+            
+
+            function addPokemonToRoot(pokemon){
+
+                // 1. variable that will attatch to root div
+                let rootDiv = document.querySelector("#root");
+
+                let pokemonDiv = document.createElement("div");
+
+                let nameHeading = document.createElement("h1");
+
+                nameHeading.innerHTML = pokemon.name;
+
+                // add name heading to pok div
+                pokemonDiv.append(nameHeading);
+
+                // add pok div to root div
+                rootDiv.append(pokemonDiv);
+
+        
+
+            }
+
+            addPokemonToRoot(allPokemon[1]);
+
+
+        </script>
+    </body>
+</html>
