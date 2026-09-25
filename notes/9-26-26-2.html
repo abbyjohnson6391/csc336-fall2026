@@ -1,0 +1,58 @@
+<html>
+
+
+
+<head>
+
+
+
+</head>
+
+
+<body>
+
+    <div id = "buttonDataDiv"> </div>
+
+    <button id="buttonOne" onclick="buttonOne()">One</button>
+        <button id="buttonTwo" onclick="buttonTwo()">Two</button>
+            <button id="buttonThree" onclick="buttonThree()">Three</button>
+                <button id="buttonFour" onclick="buttonFour()">Four</button>
+
+
+
+
+    <script>
+
+        // connect var to the div
+        let buttonDataDiv = document.querySelector("#buttonDataDiv")
+
+        // when its corresponding button is cliced, it links to to div and changes text
+
+        function buttonOne(){
+            buttonDataDiv.innerHTML = "One";
+        }
+
+        function buttonTwo(){
+            buttonDataDiv.innerHTML = "Two";
+        }
+
+        function buttonThree(){
+            buttonDataDiv.innerHTML = "Three";
+        }
+
+        function buttonFour(){
+            buttonDataDiv.innerHTML = "Four";
+        }
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

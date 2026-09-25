@@ -1,0 +1,59 @@
+<html>
+
+
+
+<head>
+
+
+
+</head>
+
+
+<body>
+
+    <div id = "buttonDataDiv"></div>
+    <div id = "buttonsDiv"></div>
+
+
+    
+
+
+
+    <script>
+
+        // Define the event listener for the buttons
+        function buttonClick(e){
+            console.log(e.target.innerHTML);
+            buttonDataDiv.innerHTML = e.target.innerHTML;
+        }
+
+
+
+        let buttonData = ["one", "two", "three", "four"];
+
+        let buttonDataDiv = document.querySelector("#buttonDataDiv");
+
+        let buttonsDiv = document.querySelector("#buttonsDiv")
+
+
+
+        for (let i =0; i < buttonData.length; i++){
+            let buttonObj = document.createElement("button");
+            buttonObj.innerHTML = buttonData[i];
+            buttonObj.addEventListener("click", buttonClick);
+            buttonsDiv.append(buttonObj);
+
+        }
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
