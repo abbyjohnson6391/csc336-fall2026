@@ -1,0 +1,48 @@
+<html>
+    <body>
+
+        <div id = "roomRoot"> </div>
+
+        <script>
+            let roomRootDiv = document.querySelector("#roomRoot");
+
+            // entry is key of key-value pair
+            let rooms = {
+                entry:{
+                    name: "entry room",
+                    descriptipon: "thisiswherethegamestarts",
+                    linkedRooms: ["classroom"]
+                }
+            }
+
+            let currentRoom = rooms["entry"];
+
+            function navButtonClicked(){
+                console.log(e.target.innerHTML);
+            }
+
+            function visualizeRoom(room){
+                let roomTitle = document.creatElement("h1");
+                roomTitle.innerHTML = room.name;
+                roomRootDiv.append(roomTitle)
+
+                let descriptionP = document.createElement("p");
+                descriptionP.innerHTML = room.description;
+                roomRootDiv.append(descriptionP);
+
+                for (let i =0; i < room.linkedRooms.length; i++){
+                    let navButton = document.createElement("button");
+                    navButton.innerHTML = room[i].name;
+                    navButton.addEventListener("click", navButtonClicked);
+                }
+
+            }
+
+            visualizeRoom(currentRoom);
+
+        </script>
+
+
+
+    </body>
+</html>

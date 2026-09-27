@@ -13,6 +13,7 @@
 
     <div id = "buttonDataDiv"></div>
     <div id = "buttonsDiv"></div>
+    <input id = "inputElement" type = "text"> </input>
 
 
     
@@ -21,19 +22,30 @@
 
     <script>
 
-        // Define the event listener for the buttons
-        function buttonClick(e){
-            console.log(e.target.innerHTML);
-            buttonDataDiv.innerHTML = e.target.innerHTML;
-        }
-
-
+        let inputElement = document.querySelector("#inputElement")
 
         let buttonData = ["one", "two", "three", "four"];
 
         let buttonDataDiv = document.querySelector("#buttonDataDiv");
 
         let buttonsDiv = document.querySelector("#buttonsDiv")
+
+        // Define the event listener for the buttons
+        function buttonClick(e){
+            console.log(e.target.innerHTML);
+            buttonDataDiv.innerHTML = e.target.innerHTML;
+
+            if (inputElement.value === "PASSWORD"){
+                console.log("Correct");
+            } else{
+                    console.log("not correct");
+                }
+            }
+        
+
+
+
+        
 
 
 
