@@ -94,6 +94,9 @@ function visualizeRoom(room){
     roomBase.append(roomDes);
     console.log("description ran");
 
+    // CHALLENGE; A hidden password
+
+
     if (room.password){
 
         // make the question
@@ -143,7 +146,7 @@ function visualizeRoom(room){
 // game starts in a room
 visualizeRoom(rooms["rainForest"])
 
-// MAKING A DYNAMIC ARRAY
+// CHALLENGE; AN INVENTORY 
 
 function makeArray(array){
 
