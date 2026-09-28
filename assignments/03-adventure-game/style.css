@@ -17,12 +17,22 @@ h1 {
 }
 
 img {
-    height: 340;
-    width: 240;
+    height: 340px;
+    width: 240px;
+}
+
+button {
+
+    background-color: rgb(199, 185, 139);
+    min-width: 100px;
+    min-height: 20px;
+    display: inline-block;
+    border-radius: 20%;
 }
 
 .container {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+  display: flex;
+  gap: 6px;
+  justify-content: space-between;
 }
+

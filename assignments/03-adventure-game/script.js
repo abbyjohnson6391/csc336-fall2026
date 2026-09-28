@@ -1,5 +1,11 @@
 
-let roomBase = document.querySelector("#roomBase");
+let roomBase = document.createElement("div");
+let newWorld = document.createElement("div");
+
+document.body.append(roomBase);
+document.body.append(newWorld);
+
+
 
     let rooms = {
 
@@ -60,6 +66,7 @@ function navButtonClicked(e) {
 
     currentRoom = rooms[nextRoom];
 
+   
 
 
 
@@ -125,15 +132,60 @@ function visualizeRoom(room){
         }
     })
 
-    
 
 }
+
+
+
 
 }
 
 // game starts in a room
 visualizeRoom(rooms["rainForest"])
 
-let newSentence = document.createElement("p");
-newSentence.innerHTML = "Enter a world you'd like to see added here!"
-roomBase.append(newSentence);
+// MAKING A DYNAMIC ARRAY
+
+function makeArray(array){
+
+   
+    
+    // sentence to inform user
+    let newSentence = document.createElement("p");
+    newSentence.innerHTML = "Enter a world you'd like to see added here!"
+    newWorld.append(newSentence);
+    
+    // space for input 
+    let userNew = document.createElement("input");
+    newWorld.append(userNew);
+
+    // making button for interactivity
+    newWorldButton = document.querySelector("#newWorldButton");
+    newWorld.append(newWorldButton)
+
+    // making and appending array of new world suggestions
+    let newList = document.createElement("ul");
+    newWorld.append(newList)
+
+
+
+   newWorldButton.addEventListener("click", function() {
+
+        array.push(userNew.value); 
+
+        let newListItem = document.createElement("li");
+        newListItem.innerHTML = userNew.value;
+        newList.append(newListItem);
+        userNew.value = "";
+
+})
+
+
+
+}
+
+// MAKING A DYNAMIC ARRAY
+
+let newWorldarray = [];
+makeArray(newWorldarray);
+
+
