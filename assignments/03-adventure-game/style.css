@@ -1,0 +1,28 @@
+body {
+    background-image: linear-gradient(to bottom left, rgb(201, 157, 186), rgb(109, 167, 225));
+}
+p {
+    max-width: 400px;
+    padding: 15px; 
+    background-color: rgb(135, 165, 201);
+    border-color: rgb(21, 48, 130);
+    border-radius: 10px; 
+    margin: 20px;
+}
+
+h1 {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 800;
+
+}
+
+img {
+    height: 340;
+    width: 240;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
