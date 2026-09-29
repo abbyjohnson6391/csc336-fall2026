@@ -42,9 +42,7 @@ document.body.append(newWorld);
 // when button is clicked, next room is visualized 
 function navButtonClicked(e) {
 
-    if (currentRoom == rooms.desert){
-
-    }
+   
 
     // below: grab name of next room 
     let nextRoom = currentRoom.linkedRooms[0];
@@ -65,6 +63,9 @@ function navButtonClicked(e) {
     console.log("button clicked");
 
     currentRoom = rooms[nextRoom];
+    // currentRoom: variable to keep track of what room the player is in 
+    console.log("current room is:" + currentRoom.name);
+
 
    
 
