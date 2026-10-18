@@ -50,8 +50,9 @@ let localStorageKey = "products";
                 let newProduct = {};
 
 
-                // loops through every entry
+                // for each sumbit: grabs name, price, descript, category
                 productFormData.forEach((value, name) => {
+                        console.log(name, value, typeof value);
                         newProduct[name] = value;
                         // push all the attributes of the new product
                     
@@ -81,8 +82,17 @@ let localStorageKey = "products";
                     // for each item in the array (data) make a list item, add to div, and set value to user
                     let productItem = document.createElement("li");
                     productList.append(productItem);
-                    // x is an object so cant be stringified
-                    productItem.innerHTML = x;
+                    // ERROR: x is an object so cant be stringified
+                    // show each dict value separately  
+                    productItem.innerHTML = `
+                    <p>Name: ${x.newNameInput}</p>
+                    <p>Price: ${x.productPrice}</p>
+                    <p>Description: ${x.productDescription}</p>
+                    <p>Category: ${x.productCategory}</p>
+                    <p>Image: ${x.productPic}</p>
+
+                    
+                    `
                 });
 
                 // back to strings for local storage
