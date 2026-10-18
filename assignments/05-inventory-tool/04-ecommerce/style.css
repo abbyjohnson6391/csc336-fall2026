@@ -1,0 +1,61 @@
+
+img{
+    height: 100px;
+    width: 100px;
+    border-color: black;
+
+}
+
+#display{
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+
+    margin: 20px;
+    
+
+    
+}
+
+#cart {
+
+    padding: 15px;
+
+    border-color: black;
+    border-style: dotted;
+    
+    background-color: beige;
+} 
+
+#craft{
+
+    padding: 15px;
+
+    border-color: indigo;
+    border-width: 10px;
+    border-style: dotted;
+
+    background-color: beige;
+   
+} 
+
+p {
+    background-color: rgb(191, 216, 216);
+}
+
+
+.craftCard {
+    padding: 15px;
+    border: cornflowerblue;
+    border-width: 3px;
+    border-style: solid;
+}
+
+/* two classes */
+.craftCard.checked {   
+    
+    background-color: cornflowerblue;
+
+}

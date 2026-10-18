@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>
+        Assignment 5: E-Comerce w/ storage
+    </title>
+     <!-- defer so html (structure) loads first -->
+     <script src="script.js" defer></script>
+    <script src ="04-ecommerce/script.js" defer></script>
+
+    <link rel="stylesheet" href="04-ecommerce/style.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<link rel="stylesheet" href="style.css">
+
+<body>
+    <!-- first?  -->
+    <div id="currentProductsDiv"></div>
+
+    <div id = "addUserDiv">
+
+            <form id="productDataForm">
+            
+                <label for="nameInputField">New product:</label>
+                <input id="nameInputField" name="newNameInput" type="text" placeholder="Add name...">
+                 <!--id is id for html box; name is id for input-->
+                <input name="producePrice" id="nameInputField1" type="text" placeholder="Price">
+                <input name="productDescription" id="nameInputField2" type="text" placeholder="Description">
+                <input name="productCategory" id="nameInputField3" type="text" placeholder="Category: tools or materials?">
+
+                <input type="submit">
+            </form>
+
+         </div>
+
+<div id = "display">
+
+    <div id="craft"></div>
+
+<div id="cart">
+    <div>
+        <button id = "addSelectedButton"> add selected to cart</button>
+    </div>
+    <h1>
+        "Cart Items:"
+    </h1>
+
+    <div id = "cartItems"></div>
+
+    <p id="priceCart">
+
+    </p>
+</div>
+
+</div>
+
+</body>
+
+</html>
+

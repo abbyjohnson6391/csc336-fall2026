@@ -12,6 +12,7 @@
                 for free: pressing Enter submits it, and we get a "submit" event
                 to listen for.
             -->
+            <!-- form manually inputted into div -->
             <form id="userDataForm">
                 <input id="nameInputField" type="text" placeholder="Add name...">
                 <input type="submit">
@@ -36,9 +37,9 @@
 
             // DOMContentLoaded fires once the browser has finished reading
             // the whole HTML page. This is when we load any saved data and
-            // draw it. (Since this script is already at the bottom of the
-            // body, the elements above exist either way, but this is a
-            // common, safe place to put "start up" code.)
+            // draw it. 
+
+            // added to the ENTIRE webpage DOCUMENT
             document.addEventListener('DOMContentLoaded', (event) => {
                 // localStorage: allows web apps to STORE key value data directly w/in user browser
                 // getItem hands back the saved STRING from localStorage
@@ -51,9 +52,13 @@
                 // check, the first visit turns userData into null, and then
                 // forEach and push both crash.
                 if (localStorageData !== null) {
-                    // Parse the string of the data back into js data
-                    // turns strings into JS object or array
+                    // Parse the string of the data BACK INTO into js array
+
+                    // before: a string that encompasses an "array"
+                    // after: a REAL array (individual items with "strings")
                     userData = JSON.parse(localStorageData);
+
+                    // JSON is notation for storing and passing data 
                 }
                 console.log(userData);
                 updateUserList(userData);
@@ -72,16 +77,18 @@
 
                 // pushes input from #nameInputField to user data- the big array
                 userData.push(nameInputField.value);
+                // clear the input field
                 nameInputField.value = "";
                 // console.log(userData);
 
-                // The data changed, so redraw the page
+                // update the user list with the new user data
                 updateUserList(userData);
             });
 
             // Draws the list from the data, then saves the data. Called on
-            // page load and after every new user. Same "clear it and redraw
-            // everything" pattern as the album and Pokemon examples.
+            // page load and after every new user.
+
+            // now data is parsed 
             function updateUserList(data) {
                 // Throw away the old list completely.
                 currentUsersDiv.innerHTML = "";
@@ -110,11 +117,13 @@
                 // To see it: DevTools > Application tab > Local Storage.
 
                 // syntax: localStorage.setItem(key, value)-> SAVES data to local storage
+        
                 localStorage.setItem(localStorageKey, jsonStringVersionOfData);
             }
         </script>
     </body>
 </html>
 
-<!-- the main active code is the two event listeners which both call on
+<!-- the main active code is the two 
+ event listeners which both call on
  the function updateUserList -->
