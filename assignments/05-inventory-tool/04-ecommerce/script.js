@@ -53,6 +53,7 @@ let craftStore = {
 
 }; 
 
+
 // add to array
 allCrafts.push(craftStore.fabric);
 allCrafts.push(craftStore.hot_glue);
@@ -252,15 +253,14 @@ selectCategory.append(optionElement3);
 // default value
 selectCategory.value = "all"; 
 
+
 //filtering from select
 
+// nothing's displayed right away: bc render not called until [select] changed
 selectCategory.addEventListener("change", e=>{
 
     craftContainer.innerHTML = "";
-
     let displayCategories;
-
-
     if (selectCategory.value == "all"){
         displayCategories = allCrafts;
     } else{

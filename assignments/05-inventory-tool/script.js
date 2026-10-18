@@ -47,18 +47,20 @@ let localStorageKey = "products";
                 // re-initiates var when new data
                 // collects productForm data
                 let productFormData = new FormData(productForm);
-                let newProduct = {};
+                // line below: CONNECTS matches keys betwen js files
+                // makes newProduct a dict where the retrieved (get) value
+                // from form matches the attribute defined in 04-ecommerce
+                let newProduct = {
+                    // grab directly from id form
+                            name: productFormData.get("newNameInput"),
+                            price: productFormData.get("productPrice"),
+                            description: productFormData.get("productDescription"),
+                            category: productFormData.get("productCategory"),
+                            image: productFormData.get("productImage")};
 
-
-                // for each sumbit: grabs name, price, descript, category
-                productFormData.forEach((value, name) => {
-                        console.log(name, value, typeof value);
-                        newProduct[name] = value;
-                        // push all the attributes of the new product
-                    
-                });
-
-                 // add new product
+                 // error check
+                 console.log("New product:", newProduct);
+                 // add new product (1 at a time)
                  allCrafts.push(newProduct);
 
                 // update the user list with the new user data
@@ -66,7 +68,13 @@ let localStorageKey = "products";
 
                 // clear form
                 productForm.reset();
-            });
+                });
+
+                
+
+                
+
+            
 
             // Draws the list from the data, then saves the data. 
             // called on by event listeners
@@ -76,23 +84,23 @@ let localStorageKey = "products";
                 currentProductsDiv.innerHTML = "";
 
                 // Build a NEW <ul> and put one <li> in it per product.
-                let productList = document.createElement("ul");
-                currentProductsDiv.append(productList);
+                // let productList = document.createElement("ul");
+                // currentProductsDiv.append(productList);
                 data.forEach((x) => {
                     // for each item in the array (data) make a list item, add to div, and set value to user
-                    let productItem = document.createElement("li");
-                    productList.append(productItem);
+                    // let productItem = document.createElement("li");
+                    // productList.append(productItem);
                     // ERROR: x is an object so cant be stringified
                     // show each dict value separately  
-                    productItem.innerHTML = `
-                    <p>Name: ${x.newNameInput}</p>
-                    <p>Price: ${x.productPrice}</p>
-                    <p>Description: ${x.productDescription}</p>
-                    <p>Category: ${x.productCategory}</p>
-                    <p>Image: ${x.productPic}</p>
 
-                    
+                    x.innerHTML = `
+                        <p>Name: ${x.newNameInput}</p>
+                        <p>Price: ${x.productPrice}</p>
+                        <p>Description: ${x.productDescription}</p>
+                        <p>Category: ${x.productCategory}</p>
+                        <p>Image: ${x.productPic}</p>
                     `
+
                 });
 
                 // back to strings for local storage
