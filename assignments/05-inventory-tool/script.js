@@ -53,7 +53,7 @@ let localStorageKey = "products";
                 let newProduct = {
                     // grab directly from id form
                             name: productFormData.get("newNameInput"),
-                            price: Number(productFormData.get("productPrice")),
+                            price: productFormData.get("productPrice"),
                             description: productFormData.get("productDescription"),
                             category: productFormData.get("productCategory"),
                             image: productFormData.get("productPic")};
@@ -65,8 +65,11 @@ let localStorageKey = "products";
                 // and newProduct not rendered
                 if (newProduct.price > 35) {
                     console.log("price too high!")
-                    return;
+                    let errorDiv = document.createElement("div"); 
+                    errorDiv.innerHTML = "price too high: must be under 30"; 
 
+                    currentProductsDiv.append(errorDiv);
+                    return;
                 }
 
                  // error check

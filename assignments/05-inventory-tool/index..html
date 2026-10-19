@@ -23,13 +23,13 @@
             <form id="productDataForm">
             
                 <label for="nameInputField">New product:</label>
-                <input id="nameInputField" name="newNameInput" type="text" placeholder="Add name...">
+                <input id="nameInputField" name="newNameInput" type="text" placeholder="Add name..." required>
                  <!--id is id for html box; name is id for input-->
-                <input name="productPrice" id="nameInputField1" type="text" placeholder="Price">
-                <input name="productDescription" id="nameInputField2" type="text" placeholder="Description">
+                <input name="productPrice" id="nameInputField1" type="number" min = "0" step = "0.01" placeholder="Price" required>
+                <input name="productDescription" id="nameInputField2" type="textarea" placeholder="Description" required >
                 <label for="nameInputField4">Image path:</label> 
-                <input name="productPic" id="nameInputField4" type="text" placeholder="Enter pic link">
-                <input name="productCategory" id="nameInputField3" type="text" placeholder="Category: tools or materials?">
+                <input name="productPic" id="nameInputField4" type="url" placeholder="Enter pic link" required>
+                <input name="productCategory" id="nameInputField3" type="text" placeholder="tools or materials?" required>
 
 
                 <input type="submit">
