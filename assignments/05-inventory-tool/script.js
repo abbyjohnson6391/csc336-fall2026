@@ -58,6 +58,17 @@ let localStorageKey = "products";
                             category: productFormData.get("productCategory"),
                             image: productFormData.get("productPic")};
 
+                // my validation rule
+                // if price too high...
+                // then newproduct not added to allCrafts 
+                // and list not updated
+                // and newProduct not rendered
+                if (newProduct.price > 35) {
+                    console.log("price too high!")
+                    return;
+
+                }
+
                  // error check
                  console.log("New product:", newProduct);
                  // add new product (1 at a time)
