@@ -53,10 +53,10 @@ let localStorageKey = "products";
                 let newProduct = {
                     // grab directly from id form
                             name: productFormData.get("newNameInput"),
-                            price: productFormData.get("productPrice"),
+                            price: Number(productFormData.get("productPrice")),
                             description: productFormData.get("productDescription"),
                             category: productFormData.get("productCategory"),
-                            image: productFormData.get("productImage")};
+                            image: productFormData.get("productPic")};
 
                  // error check
                  console.log("New product:", newProduct);
@@ -66,16 +66,11 @@ let localStorageKey = "products";
                 // update the user list with the new user data
                 updateUserList(allCrafts);
 
+                render(newProduct);
+
                 // clear form
                 productForm.reset();
                 });
-
-                
-
-                
-
-            
-
             // Draws the list from the data, then saves the data. 
             // called on by event listeners
 
@@ -94,13 +89,12 @@ let localStorageKey = "products";
                     // show each dict value separately  
 
                     x.innerHTML = `
-                        <p>Name: ${x.newNameInput}</p>
-                        <p>Price: ${x.productPrice}</p>
-                        <p>Description: ${x.productDescription}</p>
-                        <p>Category: ${x.productCategory}</p>
-                        <p>Image: ${x.productPic}</p>
+                        <p>Name: ${x.name}</p>
+                        <p>Price: ${x.price}</p>
+                        <p>Description: ${x.description}</p>
+                        <p>Category: ${x.category}</p>
+                        
                     `
-
                 });
 
                 // back to strings for local storage
@@ -114,4 +108,14 @@ let localStorageKey = "products";
         
                 localStorage.setItem(localStorageKey, jsonStringVersionOfData);
             }
-   
+
+   let resetButton = document.querySelector("#resetButton");
+
+   resetButton.addEventListener("click", (event) => {
+    
+    // need the key
+    localStorage.removeItem("products");
+    console.log("clearing");
+
+   }); 
+

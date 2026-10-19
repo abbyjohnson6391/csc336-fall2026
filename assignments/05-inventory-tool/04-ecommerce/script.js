@@ -6,7 +6,7 @@ let craftStore = {
             name: "Fabric",
             price: 5,
             description: "Used mainly for sewing and quilting",
-            image: "fabric.png",
+            image: "04-ecommerce/fabric.png",
             category: "materials"
             
         },
@@ -14,7 +14,7 @@ let craftStore = {
         name: "Hot glue",
         price: 8,
         description: "Used to glue heavy materials together",
-        image: "hot_glue.png", 
+        image: "04-ecommerce/hot_glue.png", 
         category: "tools"
 
     },
@@ -23,7 +23,7 @@ let craftStore = {
         name: "Beads",
         price: 6,
         description: "Used for decoration or embellishment",
-        image: "beads.png", 
+        image: "04-ecommerce/beads.png", 
         category: "materials"
     },
 
@@ -31,7 +31,7 @@ let craftStore = {
         name: "Fabric cutter",
         price: 12,
         description: "Used to cut fabric and other materials with precision",
-        image: "cutter.png",
+        image: "04-ecommerce/cutter.png",
         category: "tools"
     },
 
@@ -39,7 +39,7 @@ let craftStore = {
         name: "Paints",
         price: 16,
         description: "Adds vibrant color to a variety of crafts",
-        image: "paints.png",
+        image: "04-ecommerce/paints.png",
         category: "materials"
     },
 
@@ -47,7 +47,7 @@ let craftStore = {
         name: "Ruler",
         price: 3,
         description: "Used to make straight lines",
-        image: "ruler.png",
+        image: "04-ecommerce/ruler.png",
         category: "tools"
     }
 
