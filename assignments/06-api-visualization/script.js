@@ -30,14 +30,14 @@ async function setup() {
 
     for (x of json){
         titles.push(x.title);
-}
+} // gathers all filmtitles in array
 
     for (x of json){
         scores.push(x.rt_score);
-}
+} // gathers all film rt scores in one array 
     
 
-    console.log(typeof(titles));
+    // console.log(typeof(titles));
 
     const config = {
         type: 'bar', // bar chat
