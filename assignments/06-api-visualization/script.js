@@ -12,16 +12,6 @@ async function getFilms () {
         console.log(x.title);
         console.log(x.release_date);
     }
-
-    let years = [];
-     for (x of json){
-        years .push(x.release_date);
-} // gathers all film rt scores in one array 
-
-
-
-
-    console.log(years);
     
     // otherwise we can't work with the data
     return json;
@@ -69,34 +59,39 @@ async function setup() {
                 label: 'Rotten Tomatoes Scores',
                 data: scores,
                 backgroundColor: function(context) {
-                    const index = context.dataIndex;
-                    const value = context.dataset.data[index];
-                    return value "1986" ? 'red' : 
-                        "1988" ? 'orange' :    
-                        "1989" ? 'yellow' :
-                        "1991" ? 'green':
-                        "1992" ? 'blue' :    
-                        "1994" ? 'purple' :
-                        "1995" ? 'pink':
-                        "1997" ? 'black' :   
-                        "1999" ? 'white' :
-                        "2001" ? 'gray':
-                        "2002" ? 'gold' :    
-                        "2004" ? 'silver' :
-                        "2006" ? 'light red':
-                        "2008" ? 'light orange' :
-                        "2010" ? 'light yellow':
-                        "2011" ? 'light blue' :   
-                        "2013" ? 'light green' :
-                        "2014" ? 'light purple':
-                        "2016" ? 'light pink' :    
-                        "2021" ? 'turquoise' :
-                       
-                      
-                      
 
-},
-            }]},
+                    let years = [];
+                    for (x of json) {
+                         years.push(Number(x.release_date))} // gathers all film rt scores in one array 
+
+                    const index = context.dataIndex; // position of bar currently being drawn
+                    const year = years[index]; // for bar being drawn, get year
+
+                    return year === 1986 ? 'red' :
+                    year === 1988 ? 'orange' :
+                    year === 1989 ? 'yellow' :
+                    year === 1991 ? 'green' :
+                    year === 1992 ? 'blue' :
+                    year === 1994 ? 'purple' :
+                    year === 1995 ? 'pink' :
+                    year === 1997 ? 'black' :
+                    year === 1999 ? 'white' :
+                    year === 2001 ? 'gray' :
+                    year === 2002 ? 'gold' :
+                    year === 2004 ? 'silver' :
+                    year === 2006 ? '#ff9999' :
+                    year === 2008 ? '#ffcc99' :
+                    year === 2010 ? '#ffff99' :
+                    year === 2011 ? '#99ccff' :
+                    year === 2013 ? '#99ff99' :
+                    year === 2014 ? '#cc99ff' :
+                    year === 2016 ? '#ffb6c1' :
+                    'turquoise';
+            }
+                       
+                    
+}],
+            },
             
         options: {
             responsive: true,
@@ -110,7 +105,7 @@ async function setup() {
       }
     }
   }
-}  
+};  
 
 // instantiate a new chart object in score_chart div
 new Chart(score_chart, config);
